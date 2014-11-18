@@ -1,0 +1,63 @@
+﻿@model MvcApp.Models.Create.CreateSubjectModel
+@{
+    Model.Courses.Name = "Курсы";
+    Model.Lessons.Name = "Занятия";
+}
+<fieldset>
+    <legend>Subject</legend>
+    @Html.ValidationSummary(true)
+    @if (Model.Model != null && Model.Model.Id > 0)
+    {
+        @Html.HiddenFor(x => x.Model.Id)
+        @Html.HiddenFor(x => x.Model.EntityVersion)
+    }
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Name)
+        @Html.ValidationMessageFor(model => model.Model.Name)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Book)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Book)
+        @Html.ValidationMessageFor(model => model.Model.Book)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Plan)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Plan)
+        @Html.ValidationMessageFor(model => model.Model.Plan)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Okr)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Okr)
+        @Html.ValidationMessageFor(model => model.Model.Okr)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Test)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Test)
+        @Html.ValidationMessageFor(model => model.Model.Test)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.HoursNumber)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.HoursNumber)
+        @Html.ValidationMessageFor(model => model.Model.HoursNumber)
+    </div>
+    @Html.EditorFor(x => x.Courses)
+    @Html.EditorFor(x => x.Lessons)
+</fieldset>

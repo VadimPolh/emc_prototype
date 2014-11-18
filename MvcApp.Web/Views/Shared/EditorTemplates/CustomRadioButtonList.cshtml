@@ -1,0 +1,15 @@
+﻿@model MvcApp.Models.Common.CustomRadioButtonList
+
+<div class="editor-label">
+    <label>@Model.Name</label>
+</div>
+
+<div class="editor-field">
+    @if (Model.Items != null && Model.Items.Any())
+    {
+        for (var i = 0; i < Model.Items.Count; i++)
+        {
+           <p> @Html.RadioButtonFor(b => b.SelectedValue, Model.Items[i].Model.Id, new { id = i }))<label for="@i">@Model.Items[i].Model.Name</label></p>
+    }
+}
+</div>

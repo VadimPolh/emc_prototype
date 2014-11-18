@@ -1,0 +1,85 @@
+﻿@model MvcApp.DalEntities.Entities.Subject
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutBase.cshtml";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Subject</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Book)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Book)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Plan)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Plan)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Okr)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Okr)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Test)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Test)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HoursNumber)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HoursNumber)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Courses)
+    </div>
+    <div class="display-field">
+        @if (Model.Courses != null)
+        {
+            foreach (var item in Model.Courses)
+            {
+                <span>@Html.ActionLink(item.Number.ToString(), "Details", "Course", new {id = item.Id}, null) </span>
+            }
+        }
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Lessons)
+    </div>
+    <div class="display-field">
+        @if (Model.Lessons != null)
+        {
+            foreach (var item in Model.Lessons)
+            {
+                <span>@Html.ActionLink(item.Name, "Details", "Lesson", new {id = item.Id}, null) </span>
+            }
+        }
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

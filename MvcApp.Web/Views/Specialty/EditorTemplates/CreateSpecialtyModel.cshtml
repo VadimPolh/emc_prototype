@@ -1,0 +1,31 @@
+﻿@model MvcApp.Models.Create.CreateSpecialtyModel
+@{
+    Model.Branches.Name = "Отделения";
+    Model.Sets.Name = "Направления";
+}
+<fieldset>
+    <legend>Specialty</legend>
+    @Html.ValidationSummary(true)
+    @if (Model.Model != null && Model.Model.Id > 0)
+    {
+        @Html.HiddenFor(x => x.Model.Id)
+        @Html.HiddenFor(x => x.Model.EntityVersion)
+    }
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Name)
+        @Html.ValidationMessageFor(model => model.Model.Name)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Mentor)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Mentor)
+        @Html.ValidationMessageFor(model => model.Model.Mentor)
+    </div>
+    @Html.EditorFor(x => x.Branches)
+    @Html.EditorFor(x => x.Sets)
+</fieldset>

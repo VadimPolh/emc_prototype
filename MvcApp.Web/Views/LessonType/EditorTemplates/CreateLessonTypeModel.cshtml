@@ -1,0 +1,29 @@
+﻿@model MvcApp.Models.Create.CreateLessonTypeModel
+@{
+    Model.Lessons.Name = "Занятия";
+}
+<fieldset>
+    <legend>LessonType</legend>
+    @Html.ValidationSummary(true)
+    @if (Model.Model != null && Model.Model.Id > 0)
+    {
+        @Html.HiddenFor(x => x.Model.Id)
+        @Html.HiddenFor(x => x.Model.EntityVersion)
+    }
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Name)
+        @Html.ValidationMessageFor(model => model.Model.Name)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Topic)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Topic)
+        @Html.ValidationMessageFor(model => model.Model.Topic)
+    </div>
+    @Html.EditorFor(x => x.Lessons)
+</fieldset>

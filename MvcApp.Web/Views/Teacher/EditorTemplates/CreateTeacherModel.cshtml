@@ -1,0 +1,39 @@
+﻿@model MvcApp.Models.Create.CreateTeacherModel
+@{
+    Model.Lessons.Name = "Занятия";
+    Model.Groups.Name = "Группы";
+}
+<fieldset>
+    <legend>Model</legend>
+    @Html.ValidationSummary(true)
+    @if (Model.Model != null && Model.Model.Id > 0)
+    {
+        @Html.HiddenFor(x => x.Model.Id)
+        @Html.HiddenFor(x => x.Model.EntityVersion)
+    }
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Fio)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Fio)
+        @Html.ValidationMessageFor(model => model.Model.Fio)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Pass)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Pass)
+        @Html.ValidationMessageFor(model => model.Model.Pass)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Exp)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Exp)
+        @Html.ValidationMessageFor(model => model.Model.Exp)
+    </div>
+    @Html.EditorFor(x => x.Lessons)
+    @Html.EditorFor(x => x.Groups)
+</fieldset>

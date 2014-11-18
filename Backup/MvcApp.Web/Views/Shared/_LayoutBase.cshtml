@@ -1,0 +1,33 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = !String.IsNullOrEmpty(ViewBag.Title) 
+        ? ViewBag.Title 
+        : "Заголовок страницы";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+</head>
+    <body>
+        <div id="topMenu">
+            <ul>
+                <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                <li>@Html.ActionLink("Branches", "Index", "Branch")</li>
+                <li>@Html.ActionLink("Containers", "Index", "Container")</li>
+                <li>@Html.ActionLink("Courses", "Index", "Course")</li>
+                <li>@Html.ActionLink("Groups", "Index", "Group")</li>
+                <li>@Html.ActionLink("Lessons", "Index", "Lesson")</li>
+                <li>@Html.ActionLink("Lesson Types", "Index", "LessonType")</li>
+                <li>@Html.ActionLink("Sets", "Index", "Set")</li>
+                <li>@Html.ActionLink("Specialities", "Index", "Specialty")</li>
+                <li>@Html.ActionLink("Students", "Index", "Student")</li>
+                <li>@Html.ActionLink("Subjects", "Index", "Subject")</li>
+                <li>@Html.ActionLink("Teachers", "Index", "Teacher")</li>
+            </ul>
+        </div>
+        @RenderBody()
+    </body>
+</html>

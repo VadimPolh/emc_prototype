@@ -1,0 +1,49 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = !String.IsNullOrEmpty(ViewBag.Title) 
+        ? ViewBag.Title 
+        : "Заголовок страницы";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/assets/css/materialize.min.css" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="/" class="brand-logo">&nbspГлавная</a>
+            <ul class="right side-nav">
+                <li>@Html.ActionLink("Отделения", "Index", "Branch")</li>
+                <li>@Html.ActionLink("Расписание", "Index", "Container")</li>
+                <li>@Html.ActionLink("Курсы", "Index", "Course")</li>
+                <li>@Html.ActionLink("Группы", "Index", "Group")</li>
+                <li>@Html.ActionLink("Занятий", "Index", "Lesson")</li>
+                <li>@Html.ActionLink("Типы Занятий", "Index", "LessonType")</li>
+                <li>@Html.ActionLink("Специальности", "Index", "Set")</li>
+                <li>@Html.ActionLink("Факультеты", "Index", "Specialty")</li>
+                <li>@Html.ActionLink("Ученики", "Index", "Student")</li>
+                <li>@Html.ActionLink("Предметы", "Index", "Subject")</li>
+                <li>@Html.ActionLink("Преподователи", "Index", "Teacher")</li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row"><p></p></div>
+        @RenderBody()
+    </div>
+
+        <!--Import jQuery before materialize.js-->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="~/assets/js/materialize.min.js"></script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>CodeFirstStoredProcs</id>
+    <version>3.0.1</version>
+    <authors>aureolin</authors>
+    <owners>aureolin</owners>
+    <licenseUrl>http://www.codeproject.com/info/cpol10.aspx</licenseUrl>
+    <projectUrl>http://www.codeproject.com/Articles/179481/Code-First-Stored-Procedures</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Access Stored Procedures with Code First. Includes support for Input and Output parameters, multiple result sets and Table-valued parameters.
+    
+    V2.1 updates the Table-valued parameter support to a much simpler POCO model, more in keeping with the spirit of Code First / Entity Framework 4.1
+    
+    V2.2 updates the Dll to work with Entity Framework v.4.3.1
+
+    V2.5 updates the Dll for Entity Framework 5
+	
+	v2.6 updates the Dll for Entity Framework 6; adds Command Timeout optional parameter for long running procs.
+
+    v3.0 revamp of the interface, add support for Async, Streaming</description>
+    <summary>Access Stored Procedures in a database using a Entity Framework style paradigm</summary>
+    <releaseNotes>Much needed update to the interface, add support for Asnyc calling and Streaming data to/from SQL Server.</releaseNotes>
+    <copyright>Copyright 2012</copyright>
+    <tags>MVC ASP.Net CodeFirst StoredProcedures EntityFrameWork EF6 Async Streaming</tags>
+  </metadata>
+</package>

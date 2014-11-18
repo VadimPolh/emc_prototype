@@ -1,0 +1,27 @@
+﻿@model MvcApp.Models.Create.CreateGroupModel
+@{
+    Model.Courses.Name = "Курсы";
+    Model.Teachers.Name = "Преподаватели";
+    Model.Students.Name = "Студенты";
+    Model.Containers.Name = "Ячейки";
+}
+<fieldset>
+    <legend>Group</legend>
+    @Html.ValidationSummary(true)
+    @if (Model.Model != null && Model.Model.Id > 0)
+    {
+        @Html.HiddenFor(x => x.Model.Id)
+        @Html.HiddenFor(x => x.Model.EntityVersion)
+    }
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.GroupNumber)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.GroupNumber)
+        @Html.ValidationMessageFor(model => model.Model.GroupNumber)
+    </div>
+    @Html.EditorFor(x => x.Courses)
+    @Html.EditorFor(x => x.Teachers)
+    @Html.EditorFor(x => x.Students)
+    @Html.EditorFor(x => x.Containers)
+</fieldset>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MvcApp.DalEntities.Entities.Course>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutBase.cshtml";
+}
+
+                      <div class="row">
+
+                          <div class="col s12 m6">
+                              <h2>
+                                  Курсы
+
+                                  <a class="btn-floating" href="@Url.Action("Create", "Course")"><i class="mdi-content-add"></i></a>
+
+
+
+                              </h2>
+
+                          </div>
+
+                      </div>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Number)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

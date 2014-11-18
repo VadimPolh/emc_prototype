@@ -1,0 +1,13 @@
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\bin\Debug\MvcApp.BusinessLogic.dll
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\bin\Debug\MvcApp.BusinessLogic.pdb
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\bin\Debug\EntityFramework.dll
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\bin\Debug\MvcApp.Dal.dll
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\bin\Debug\MvcApp.DalEntities.dll
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\bin\Debug\MvcApp.Models.dll
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\bin\Debug\MvcApp.DalEntities.pdb
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\bin\Debug\MvcApp.Dal.pdb
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\bin\Debug\MvcApp.Models.pdb
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\bin\Debug\EntityFramework.xml
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\obj\Debug\MvcApp.BusinessLogic.csprojResolveAssemblyReference.cache
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\obj\Debug\MvcApp.BusinessLogic.dll
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.BusinessLogic\obj\Debug\MvcApp.BusinessLogic.pdb

@@ -1,0 +1,63 @@
+﻿@model MvcApp.DalEntities.Entities.Teacher
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutBase.cshtml";
+}
+
+<h2>@ViewBag.Title</h2>
+
+<fieldset>
+    <legend>Model</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Fio)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Fio)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pass)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pass)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Exp)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Exp)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Groups)
+    </div>
+    <div class="display-field">
+        @if (Model.Groups != null)
+        {
+            foreach (var item in Model.Groups)
+            {
+                <span>@Html.ActionLink(item.GroupNumber, "Details", "Group", new {id = item.Id}, null) </span>
+            }
+        }
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Lessons)
+    </div>
+    <div class="display-field">
+        @if (Model.Lessons != null)
+        {
+            foreach (var item in Model.Lessons)
+            {
+                <span>@Html.ActionLink(item.Name, "Details", "Lesson", new {id = item.Id}, null) </span>
+            }
+        }
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

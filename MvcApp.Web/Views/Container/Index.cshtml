@@ -1,0 +1,60 @@
+﻿@model IEnumerable<MvcApp.DalEntities.Entities.Container>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutBase.cshtml";
+}
+
+                      <div class="row">
+
+                          <div class="col s12 m6">
+                              <h2>
+                                  Расписание
+
+                                  <a class="btn-floating" href="@Url.Action("Create", "Container")"><i class="mdi-content-add"></i></a>
+
+
+
+                              </h2>
+
+                          </div>
+
+                      </div>
+
+
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PairNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Room)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            <label>@item.Date.ToString("dd.MM.yyyy")</label>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PairNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Room)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>

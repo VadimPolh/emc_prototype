@@ -1,0 +1,23 @@
+﻿@model MvcApp.Models.Create.CreateSetModel
+@{
+    Model.Specialties.Name = "Специальности";
+    Model.Courses.Name = "Курсы";
+}
+<fieldset>
+    <legend>Model</legend>
+    @Html.ValidationSummary(true)
+    @if (Model.Model != null && Model.Model.Id > 0)
+    {
+        @Html.HiddenFor(x => x.Model.Id)
+        @Html.HiddenFor(x => x.Model.EntityVersion)
+    }
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Model.Name)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Name)
+        @Html.ValidationMessageFor(model => model.Model.Name)
+    </div>
+    @Html.EditorFor(x => x.Specialties)
+    @Html.EditorFor(x => x.Courses)
+</fieldset>

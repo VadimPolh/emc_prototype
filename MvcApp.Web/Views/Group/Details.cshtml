@@ -1,0 +1,85 @@
+﻿@model MvcApp.DalEntities.Entities.Group
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutBase.cshtml";
+}
+
+<h2>Детальная информация</h2>
+
+<fieldset>
+    <legend>Группы</legend>
+
+    <p>Номер группы: @Html.DisplayFor(model => model.GroupNumber)</p>
+    @if (Model.Course != null)
+    {
+    <p>Курс: @Html.ActionLink(Model.Course.Number.ToString(), "Details", "Course", new { id = Model.Course.Id }, null)</p>
+    }
+
+        <div class="display-label">
+         Направление
+    </div>
+    <div class="display-field">
+        @if (Model.Course != null && Model.Course.Set != null)
+        {
+            <span>@Html.ActionLink(Model.Course.Set.Name, "Details", "Set", new {id = Model.Course.Set.Id}, null)</span>
+        }
+    </div>
+    
+    <div class="display-label">
+         Специальность
+    </div>
+    <div class="display-field">
+        @if (Model.Course != null && Model.Course.Set != null && Model.Course.Set.Specialty != null)
+        {
+            <span>@Html.ActionLink(Model.Course.Set.Specialty.Name, "Details", "Specialty", new {id = Model.Course.Set.Specialty.Id}, null)</span>
+        }
+    </div>
+    
+    <div class="display-label">
+         Отделение
+    </div>
+    <div class="display-field">
+        @if (Model.Course != null && Model.Course.Set != null && Model.Course.Set.Specialty != null && Model.Course.Set.Specialty.Branch != null)
+        {
+            <span>@Html.ActionLink(Model.Course.Set.Specialty.Branch.Name, "Details", "Branch", new {id = Model.Course.Set.Specialty.Branch.Id}, null)</span>
+        }
+    </div>
+    
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Students)
+    </div>
+    <div class="display-field">
+        @if (Model.Students != null)
+        {
+            foreach (var item in Model.Students)
+            {
+                <span>@Html.ActionLink(item.Fio, "Details", "Student", new {id = item.Id}, null) , </span>
+            }
+        }
+    </div>
+    
+    <div class="display-label">
+        Ячейки
+    </div>
+    <div class="display-field">
+        @if (Model.Containers != null)
+        {
+            foreach (var item in Model.Containers.OrderBy(x => x.Date))
+            {
+                var lessonName = item.Lesson != null ? item.Lesson.Name : String.Empty;
+                var teacherName = item.Lesson != null && item.Lesson.Teachers != null
+                                      ? String.Join(", ", item.Lesson.Teachers.Select(t => t.Fio))
+                                      : String.Empty;
+                var name = String.Format("{0}, пара - {1}, ауд. - {2}, занятие - '{3}', преподаватели - '{4}'", 
+                    item.Date.ToString("dd.MM.yyyy"), item.PairNumber, item.Room, lessonName, teacherName);
+                <p>@Html.ActionLink(name, "Details", "Container", new {id = item.Id}, null)</p>
+            }
+        }
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

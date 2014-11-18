@@ -1,0 +1,18 @@
+﻿@model MvcApp.Models.Common.CustomCheckBoxList
+
+<div class="editor-label">
+    <label>@Model.Name</label>
+</div>
+<div class="editor-field">
+    @if (Model.Items != null && Model.Items.Any())
+    {
+        for (var i = 0; i < Model.Items.Count; i++)
+        {
+            <p>
+                @Html.CheckBoxFor(x => x.Items[i].IsSelected)
+                <label for="Groups_Items_@i + '__IsSelected"> @Model.Items[i].Model.Name </label>
+                @Html.HiddenFor(x => x.Items[i].Model.Id)
+            </p>
+        }
+    }
+</div>

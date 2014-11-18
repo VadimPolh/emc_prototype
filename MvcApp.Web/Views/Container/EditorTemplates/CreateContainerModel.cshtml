@@ -1,0 +1,39 @@
+﻿@model MvcApp.Models.Create.CreateContainerModel
+@{
+    Model.Lessons.Name = "Занятия";
+    Model.Groups.Name = "Группы";
+}
+<fieldset>
+    <legend>Занятие</legend>
+    @Html.ValidationSummary(true)
+    @if (Model.Model != null && Model.Model.Id > 0)
+    {
+        @Html.HiddenFor(x => x.Model.Id)
+        @Html.HiddenFor(x => x.Model.EntityVersion)
+    }
+    <div class="editor-label">
+        Дата
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Date)
+        @Html.ValidationMessageFor(model => model.Model.Date)
+    </div>
+
+    <div class="editor-label">
+        Номер занятия
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.PairNumber)
+        @Html.ValidationMessageFor(model => model.Model.PairNumber)
+    </div>
+
+    <div class="editor-label">
+        Кабинет
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Model.Room)
+        @Html.ValidationMessageFor(model => model.Model.Room)
+    </div>
+    @Html.EditorFor(x => x.Lessons)
+    @Html.EditorFor(x => x.Groups)
+</fieldset>

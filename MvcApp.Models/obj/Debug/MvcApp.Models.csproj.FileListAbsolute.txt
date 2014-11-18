@@ -1,0 +1,7 @@
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.Models\bin\Debug\MvcApp.Models.dll
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.Models\bin\Debug\MvcApp.Models.pdb
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.Models\bin\Debug\MvcApp.DalEntities.dll
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.Models\bin\Debug\MvcApp.DalEntities.pdb
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.Models\obj\Debug\MvcApp.Models.csprojResolveAssemblyReference.cache
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.Models\obj\Debug\MvcApp.Models.dll
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.Models\obj\Debug\MvcApp.Models.pdb

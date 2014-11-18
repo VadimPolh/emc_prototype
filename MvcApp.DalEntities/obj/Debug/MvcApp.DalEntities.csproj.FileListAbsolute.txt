@@ -1,0 +1,5 @@
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.DalEntities\bin\Debug\MvcApp.DalEntities.dll
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.DalEntities\bin\Debug\MvcApp.DalEntities.pdb
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.DalEntities\obj\Debug\MvcApp.DalEntities.csprojResolveAssemblyReference.cache
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.DalEntities\obj\Debug\MvcApp.DalEntities.dll
+C:\Users\Vadim\Desktop\MvcApp-7\MvcApp.DalEntities\obj\Debug\MvcApp.DalEntities.pdb
