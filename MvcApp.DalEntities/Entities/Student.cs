@@ -1,4 +1,7 @@
-﻿namespace MvcApp.DalEntities.Entities
+﻿using System.Collections.Generic;
+using System.ComponentModel;
+
+namespace MvcApp.DalEntities.Entities
 {
     public class Student : BaseEntity
     {

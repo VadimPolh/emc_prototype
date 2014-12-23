@@ -1,44 +1,40 @@
 ﻿@model IEnumerable<MvcApp.DalEntities.Entities.Course>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Курсы";
     Layout = "~/Views/Shared/_LayoutBase.cshtml";
 }
+ <div class="row">
+     <div class="col s12 m6">
+        <h2>Курсы
+            <a class="btn-floating" href="@Url.Action("Create", "Course")"><i class="mdi-content-add"></i></a>
+         </h2>
+     </div>
+</div>
+
 
                       <div class="row">
-
-                          <div class="col s12 m6">
-                              <h2>
-                                  Курсы
-
-                                  <a class="btn-floating" href="@Url.Action("Create", "Course")"><i class="mdi-content-add"></i></a>
-
-
-
-                              </h2>
-
-                          </div>
-
+                          <div class="col s12 m6 l3"><h3>Номер</h3></div>
+                          <div class="col s12 m6 l3"><p></p></div>
+                          <div class="col s12 m6 l3"><p></p></div>
+                          <div class="col s12 m6 l3"><p></p></div>
                       </div>
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Number)
-        </th>
-        <th></th>
-    </tr>
+
+
+
+ 
 
 @foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Number)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+   
+
+    <div class="row">
+        <div class="col s12 m6 l3"><p>@Html.DisplayFor(modelItem => item.Number)</p></div>
+        <div class="col s12 m6 l3"><p>@Html.ActionLink("Изменить", "Edit", new { id = item.Id }, new { @class = "waves-effect waves-light btn" })</p></div>
+        <div class="col s12 m6 l3"><p>@Html.ActionLink("Подробно", "Details", new { id = item.Id }, new { @class = "waves-effect waves-light btn disabled" })</p></div>
+        <div class="col s12 m6 l3"><p>@Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "waves-effect waves-light btn red" })</p></div>
+    </div>
+
+
+
 }
 
-</table>

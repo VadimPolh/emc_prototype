@@ -1,4 +1,4 @@
-using System;
+п»їusing System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
@@ -13,7 +13,7 @@ namespace MvcApp.Dal.Migrations
         public Configuration()
         {
             // Add-Migration -StartUpProjectName MvcApp.Dal -ProjectName MvcApp.Dal -Name Initial
-            // Update-Database -StartUpProjectName MvcApp.Dal -ProjectName MvcApp.Dal –TargetMigration: <NameOfChange>
+            // Update-Database -StartUpProjectName MvcApp.Dal -ProjectName MvcApp.Dal вЂ“TargetMigration: <NameOfChange>
             // Update-Database -StartUpProjectName MvcApp.Dal -ProjectName MvcApp.Dal
             AutomaticMigrationsEnabled = false;
         }
@@ -23,7 +23,7 @@ namespace MvcApp.Dal.Migrations
             #region Branches
 
             var branchList = new List<Branch>();
-            foreach (var branch in new[] { "дневное", "заочное"})
+            foreach (var branch in new[] { "Р”РЅРµРІРЅРѕРµ", "Р—Р°РѕС‡РЅРѕРµ"})
             {
                 branchList.Add(new Branch
                 {
@@ -65,7 +65,7 @@ namespace MvcApp.Dal.Migrations
             #region Groups
 
             var groups = new List<Group>();
-            foreach (var item in new[] { "т-", "б-", "э-", "к-", "д-", "п-" })
+            foreach (var item in new[] { "ГІ-", "ГЎ-", "ГЅ-", "ГЄ-", "Г¤-", "ГЇ-" })
             {
                 for (var i = 1; i < 5; i++)
                 {
@@ -91,7 +91,7 @@ namespace MvcApp.Dal.Migrations
                 lessons.Add(new Lesson
                 {
                     Id = i,
-                    Name = "занятие " + i
+                    Name = "Г§Г Г­ГїГІГЁГҐ " + i
                 });
             }
             foreach (var element in lessons)
@@ -104,7 +104,7 @@ namespace MvcApp.Dal.Migrations
             #region Lesson types
 
             var lessontypes = new List<LessonType>();
-            foreach (var i in new[] { "лекция", "практическое", "зачет", "лабораторная" })
+            foreach (var i in new[] { "Г«ГҐГЄГ¶ГЁГї", "ГЇГ°Г ГЄГІГЁГ·ГҐГ±ГЄГ®ГҐ", "Г§Г Г·ГҐГІ", "Г«Г ГЎГ®Г°Г ГІГ®Г°Г­Г Гї" })
             {
                 lessontypes.Add(new LessonType
                 {
@@ -122,7 +122,7 @@ namespace MvcApp.Dal.Migrations
             #region Sets
 
             var sets = new List<Set>();
-            foreach (var name in new[]{"Информационных технологий", "Экономическое", "Правоведение"})
+            foreach (var name in new[]{"Г€Г­ГґГ®Г°Г¬Г Г¶ГЁГ®Г­Г­Г»Гµ ГІГҐГµГ­Г®Г«Г®ГЈГЁГ©", "ГќГЄГ®Г­Г®Г¬ГЁГ·ГҐГ±ГЄГ®ГҐ", "ГЏГ°Г ГўГ®ГўГҐГ¤ГҐГ­ГЁГҐ"})
             {
                 sets.Add(new Set
                              {
@@ -140,13 +140,13 @@ namespace MvcApp.Dal.Migrations
             #region Specialties
 
             var specList = new List<Specialty>();
-            foreach (var name in new[] { "ПОИТ", "Экономика и организация производства", "Бухгалтерский учет", "Правоведение","Коммерческая деятельность","Банковское дело" })
+            foreach (var name in new[] { "ГЏГЋГ€Г’", "ГќГЄГ®Г­Г®Г¬ГЁГЄГ  ГЁ Г®Г°ГЈГ Г­ГЁГ§Г Г¶ГЁГї ГЇГ°Г®ГЁГ§ГўГ®Г¤Г±ГІГўГ ", "ГЃГіГµГЈГ Г«ГІГҐГ°Г±ГЄГЁГ© ГіГ·ГҐГІ", "ГЏГ°Г ГўГ®ГўГҐГ¤ГҐГ­ГЁГҐ","ГЉГ®Г¬Г¬ГҐГ°Г·ГҐГ±ГЄГ Гї Г¤ГҐГїГІГҐГ«ГјГ­Г®Г±ГІГј","ГЃГ Г­ГЄГ®ГўГ±ГЄГ®ГҐ Г¤ГҐГ«Г®" })
             {
                 specList.Add(new Specialty
                 {
                     Id = specList.Count + 1,
                     Name = name,
-                    Mentor = "Петр Иванович"
+                    Mentor = "ГЏГҐГІГ° Г€ГўГ Г­Г®ГўГЁГ·"
                 });
             }
             foreach (var element in specList)
@@ -158,10 +158,10 @@ namespace MvcApp.Dal.Migrations
 
             #region Students
             
-            var studentNames = new[] { "Иван", "Петр", "Сергей", "Максим", "Константин", "Евгений", "Вадим", "Артем", "Георгий", "Александр" };
-            var studentsFamilies = new[] { "Иванов", "Петров", "Сидоров", "Макаров", "Гумилев", "Морозов" };
-            var studentNamesGirls = new[] { "Екатерина", "Карина", "Юлия", "Таисия", "Валентина" };
-            var studentsFamiliesGirls = new[] { "Троцкая", "Николаева", "Федорова", "Иванова", "Кромских", "Лазарева" };
+            var studentNames = new[] { "Г€ГўГ Г­", "ГЏГҐГІГ°", "Г‘ГҐГ°ГЈГҐГ©", "ГЊГ ГЄГ±ГЁГ¬", "ГЉГ®Г­Г±ГІГ Г­ГІГЁГ­", "Г…ГўГЈГҐГ­ГЁГ©", "Г‚Г Г¤ГЁГ¬", "ГЂГ°ГІГҐГ¬", "ГѓГҐГ®Г°ГЈГЁГ©", "ГЂГ«ГҐГЄГ±Г Г­Г¤Г°" };
+            var studentsFamilies = new[] { "Г€ГўГ Г­Г®Гў", "ГЏГҐГІГ°Г®Гў", "Г‘ГЁГ¤Г®Г°Г®Гў", "ГЊГ ГЄГ Г°Г®Гў", "ГѓГіГ¬ГЁГ«ГҐГў", "ГЊГ®Г°Г®Г§Г®Гў" };
+            var studentNamesGirls = new[] { "Г…ГЄГ ГІГҐГ°ГЁГ­Г ", "ГЉГ Г°ГЁГ­Г ", "ГћГ«ГЁГї", "Г’Г ГЁГ±ГЁГї", "Г‚Г Г«ГҐГ­ГІГЁГ­Г " };
+            var studentsFamiliesGirls = new[] { "Г’Г°Г®Г¶ГЄГ Гї", "ГЌГЁГЄГ®Г«Г ГҐГўГ ", "Г”ГҐГ¤Г®Г°Г®ГўГ ", "Г€ГўГ Г­Г®ГўГ ", "ГЉГ°Г®Г¬Г±ГЄГЁГµ", "Г‹Г Г§Г Г°ГҐГўГ " };
 
             var students = new List<Student>();
             foreach (var studentsFamily in studentsFamilies)
@@ -197,7 +197,7 @@ namespace MvcApp.Dal.Migrations
 
             #region Subjects
 
-            var subjNames = new[] { "философия", "математика", "физика", "программирование" };
+            var subjNames = new[] { "ГґГЁГ«Г®Г±Г®ГґГЁГї", "Г¬Г ГІГҐГ¬Г ГІГЁГЄГ ", "ГґГЁГ§ГЁГЄГ ", "ГЇГ°Г®ГЈГ°Г Г¬Г¬ГЁГ°Г®ГўГ Г­ГЁГҐ" };
             var subjects = new List<Subject>();
             foreach (var subjName in subjNames)
             {
@@ -216,8 +216,8 @@ namespace MvcApp.Dal.Migrations
 
             #region Teachers
 
-            var teacherFamilies = new[] { "Пушкин", "Достоевский", "Лермонтов", "Иванов", "Гончаров" };
-            var teacherNames = new[] { "Александр", "Алексей", "Иван", "Михаил", "Федор", "Иннокентий" };
+            var teacherFamilies = new[] { "ГЏГіГёГЄГЁГ­", "Г„Г®Г±ГІГ®ГҐГўГ±ГЄГЁГ©", "Г‹ГҐГ°Г¬Г®Г­ГІГ®Гў", "Г€ГўГ Г­Г®Гў", "ГѓГ®Г­Г·Г Г°Г®Гў" };
+            var teacherNames = new[] { "ГЂГ«ГҐГЄГ±Г Г­Г¤Г°", "ГЂГ«ГҐГЄГ±ГҐГ©", "Г€ГўГ Г­", "ГЊГЁГµГ ГЁГ«", "Г”ГҐГ¤Г®Г°", "Г€Г­Г­Г®ГЄГҐГ­ГІГЁГ©" };
             var listTeachers = new List<Teacher>();
             foreach (var teacherFamily in teacherFamilies)
             {

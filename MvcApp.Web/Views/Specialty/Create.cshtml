@@ -5,15 +5,18 @@
     Layout = "~/Views/Shared/_LayoutBase.cshtml";
 }
 
-<h2>Create</h2>
+<h2>Создание Специальности</h2>
 
 @using (Html.BeginForm()) {
     @Html.EditorFor(x=>x)
     <p>
-        <input type="submit" value="Save" />
+        <button class="btn waves-effect waves-light" type="submit" name="action">
+            Добавить
+            <i class="mdi-content-send right"></i>
+        </button>
     </p>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Вернуться назад", "Index")
 </div>
