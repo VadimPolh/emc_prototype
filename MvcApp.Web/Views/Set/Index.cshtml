@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<MvcApp.DalEntities.Entities.Set>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Специализации";
     Layout = "~/Views/Shared/_LayoutBase.cshtml";
 }
 
@@ -19,25 +19,34 @@
 
 
 
-<table>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Name)
-        </th>
-        <th></th>
-    </tr>
+                      <div class="row">
+                          <div class="col s12 m6 l6"><h4>Название</h4></div>
+                          <div class="col s12 m6 l4"></div>
+                          <div class="col s12 m6 l2"><p></p></div>
+                      </div>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+
+
+
+    <div class="row">
+        <div class="col s12 m6 l6"><p>@Html.DisplayFor(modelItem => item.Name)</p></div>
+        
+        <div class="col s12 m6 offset-s4 l2">
+            <ul id="@item.Id" class="dropdown-content">
+                <li>@Html.ActionLink("Изменить", "Edit", new { id = item.Id }, new { @class = "waves-effect waves-light btn" })</li>
+                <li>@Html.ActionLink("Подробно", "Details", new { id = item.Id }, new { @class = "waves-effect waves-light btn disabled" })</li>
+                <li>@Html.ActionLink("Удалить", "Delete", new { id = item.Id }, new { @class = "waves-effect waves-light btn red" })</li>
+            </ul>
+            <a class="btn dropdown-button" href="#!" data-activates="@item.Id">Функции<i class="mdi-navigation-arrow-drop-down right"></i></a>
+        </div>
+
+        </div>
+
+
+
+
 }
 
-</table>
+

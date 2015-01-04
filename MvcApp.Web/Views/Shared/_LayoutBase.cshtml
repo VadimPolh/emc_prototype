@@ -21,23 +21,25 @@
             <li class="divider"></li>
             <li>@Html.ActionLink("Специальности", "Index", "Specialty")</li>
             <li>@Html.ActionLink("Специализации", "Index", "Set")</li>
-
-
-
         </ul>
+        <ul id="dropdown2" class="dropdown-content" style="widows:175px!important;">
+            <li>@Html.ActionLink("Предметы", "Index", "Subject")</li>
+            <li class="divider"></li>
+            <li>@Html.ActionLink("Занятий", "Index", "Lesson")</li>
+            <li>@Html.ActionLink("Типы Занятий", "Index", "LessonType")</li>
+        </ul>
+        
         <nav>
             <div class="nav-wrapper">
                 <div class="col s12">
-                    <a href="#!" class="brand-logo">&nbspУМК</a>
+                    <a href="/" class="brand-logo">&nbspУМК</a>
                     <ul class="right side-nav">
                         <!-- Dropdown Trigger -->
                         <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Общее<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
+                        <li><a class="dropdown-button" href="#!" data-activates="dropdown2">Предметы<i class="mdi-navigation-arrow-drop-down right"></i></a></li>
                         <li>@Html.ActionLink("Расписание", "Index", "Container")</li>
                         <li>@Html.ActionLink("Группы", "Index", "Group")</li>
-                        <li>@Html.ActionLink("Занятий", "Index", "Lesson")</li>
-                        <li>@Html.ActionLink("Типы Занятий", "Index", "LessonType")</li>
                         <li>@Html.ActionLink("Ученики", "Index", "Student")</li>
-                        <li>@Html.ActionLink("Предметы", "Index", "Subject")</li>
                         <li>@Html.ActionLink("Преподователи", "Index", "Teacher")</li>
                     </ul>
                 </div>
@@ -60,6 +62,7 @@
 
         <script>
             $(".dropdown-button").dropdown({ hover: false, width: 175 });
+            $('#Model_Date').pickadate();
         </script>
 
 
